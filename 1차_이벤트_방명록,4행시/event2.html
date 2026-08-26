@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Jua&amp;family=Gaegu:wght@400;700&amp;family=Noto+Sans+KR:wght@400;500;700&amp;display=swap" rel="stylesheet">
+<script src="./image-slot.js"></script>
+<style>
+  html, body { margin: 0; background: #2f6b33; }
+  a { color: #2f6b33; text-decoration: none; }
+  a:hover { color: #1f4a23; text-decoration: underline; }
+  input, textarea, button { font-family: 'Noto Sans KR', sans-serif; }
+  input::placeholder { color: #a8a394; }
+</style>
+<template id="__bundler_thumbnail"><svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg"><rect width="120" height="120" fill="#2f6b33"></rect><rect x="26" y="34" width="16" height="12" rx="4" fill="#f4d93f"></rect><rect x="46" y="34" width="48" height="12" rx="4" fill="#fffcf3"></rect><rect x="26" y="52" width="16" height="12" rx="4" fill="#f4d93f"></rect><rect x="46" y="52" width="48" height="12" rx="4" fill="#fffcf3"></rect><rect x="26" y="70" width="16" height="12" rx="4" fill="#f4d93f"></rect><rect x="46" y="70" width="48" height="12" rx="4" fill="#fffcf3"></rect></svg></template>
+</helmet>
+
+<div style="min-height: 100vh; background: #fffcf3; max-width: 520px; margin: 0 auto; font-family: 'Noto Sans KR', sans-serif; color: #1b1b18; word-break: keep-all;">
+
+  <sc-if value="{{ formOpen }}" hint-placeholder-val="{{ true }}">
+  <div>
+    <div style="background: #2f6b33; padding: 26px 24px 22px;">
+      <div style="font-family: 'Jua', sans-serif; font-size: 15px; color: #ffffff; margin-bottom: 18px;">야키토리 동작 김포구래점</div>
+      <div style="display: flex; align-items: flex-end; gap: 10px;">
+        <div style="flex: 1;">
+          <div style="font-family: 'Jua', sans-serif; font-size: 33px; line-height: 1.3; color: #ffffff;">동작구래</div>
+          <div style="font-family: 'Jua', sans-serif; font-size: 33px; line-height: 1.3; color: #f4d93f;">4행시 대회</div>
+        </div>
+        <image-slot id="char-poem" style="width: 112px; height: 112px; flex: 0 0 auto;" shape="rect" fit="contain" placeholder="토리 캐릭터"></image-slot>
+      </div>
+    </div>
+
+    <div style="background: #f4d93f; padding: 13px 24px; font-size: 13.5px; font-weight: 500; color: #2a2a20;">세 줄만 채워도 응모 완료! · 네 줄이면 당첨 확률 UP</div>
+
+    <div style="padding: 26px 24px 40px;">
+      <div style="display: flex; flex-direction: column; gap: 12px; margin-bottom: 10px;">
+        <div style="display: flex; gap: 10px; align-items: center;">
+          <div style="width: 46px; height: 52px; flex: 0 0 auto; border-radius: 14px; background: #2f6b33; color: #ffffff; font-family: 'Jua', sans-serif; font-size: 22px; display: flex; align-items: center; justify-content: center;">동</div>
+          <input type="text" placeholder="동네에 이런 집이 있다는 게" value="{{ line1 }}" onChange="{{ onLine1 }}" style="flex: 1; min-width: 0; box-sizing: border-box; height: 52px; border: 1.5px solid #d6d0c0; border-radius: 14px; padding: 0 14px; font-size: 16px; background: #ffffff; color: #1b1b18; outline: none;">
+        </div>
+        <div style="display: flex; gap: 10px; align-items: center;">
+          <div style="width: 46px; height: 52px; flex: 0 0 auto; border-radius: 14px; background: #2f6b33; color: #ffffff; font-family: 'Jua', sans-serif; font-size: 22px; display: flex; align-items: center; justify-content: center;">작</div>
+          <input type="text" placeholder="작은 자랑거리라서" value="{{ line2 }}" onChange="{{ onLine2 }}" style="flex: 1; min-width: 0; box-sizing: border-box; height: 52px; border: 1.5px solid #d6d0c0; border-radius: 14px; padding: 0 14px; font-size: 16px; background: #ffffff; color: #1b1b18; outline: none;">
+        </div>
+        <div style="display: flex; gap: 10px; align-items: center;">
+          <div style="width: 46px; height: 52px; flex: 0 0 auto; border-radius: 14px; background: #2f6b33; color: #ffffff; font-family: 'Jua', sans-serif; font-size: 22px; display: flex; align-items: center; justify-content: center;">구</div>
+          <input type="text" placeholder="구태여 친구를 불러냈다" value="{{ line3 }}" onChange="{{ onLine3 }}" style="flex: 1; min-width: 0; box-sizing: border-box; height: 52px; border: 1.5px solid #d6d0c0; border-radius: 14px; padding: 0 14px; font-size: 16px; background: #ffffff; color: #1b1b18; outline: none;">
+        </div>
+        <div style="display: flex; gap: 10px; align-items: center;">
+          <div style="width: 46px; height: 52px; flex: 0 0 auto; border-radius: 14px; background: #ffffff; border: 1.5px dashed #c9402f; color: #c9402f; font-family: 'Jua', sans-serif; font-size: 22px; display: flex; align-items: center; justify-content: center;">래</div>
+          <input type="text" placeholder="래일 또 오겠습니다 (선택)" value="{{ line4 }}" onChange="{{ onLine4 }}" style="flex: 1; min-width: 0; box-sizing: border-box; height: 52px; border: 1.5px solid #d6d0c0; border-radius: 14px; padding: 0 14px; font-size: 16px; background: #ffffff; color: #1b1b18; outline: none;">
+        </div>
+      </div>
+      <div style="font-size: 13px; color: #c9402f; margin-bottom: 22px;">인상 깊은 문장을 남겨주신 분께 소정의 상품을 드립니다.</div>
+
+      <div onClick="{{ toggleExample }}" style="border: 1.5px solid #eae5d7; border-radius: 14px; padding: 16px; margin-bottom: 22px; cursor: pointer; background: #f6f3e8;">
+        <div style="display: flex; justify-content: space-between; align-items: center; font-size: 14.5px; font-weight: 500;">
+          <span>막히면 예시 보기</span>
+          <span style="color: #7a7566;">{{ exampleArrow }}</span>
+        </div>
+        <sc-if value="{{ exampleOpen }}" hint-placeholder-val="{{ false }}">
+          <div style="margin-top: 14px; font-family: 'Gaegu', cursive; font-size: 20px; line-height: 1.75; color: #2a2a20;">
+            <div>동 동료랑 딱 한 잔만 하려고 들렀는데</div>
+            <div>작 작별 인사가 자꾸 늦어져서</div>
+            <div>구 구래동 막차를 놓쳤습니다</div>
+            <div style="color: #c9402f;">래 래일도 올 것 같습니다</div>
+          </div>
+        </sc-if>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 12px; margin-bottom: 18px;">
+        <input type="text" placeholder="성함 (성만 적어도 됩니다)" value="{{ name }}" onChange="{{ onName }}" style="width: 100%; box-sizing: border-box; height: 52px; border: 1.5px solid #d6d0c0; border-radius: 14px; padding: 0 14px; font-size: 16px; background: #ffffff; color: #1b1b18; outline: none;">
+        <input type="tel" placeholder="연락처 (당첨 안내용)" value="{{ phone }}" onChange="{{ onPhone }}" style="width: 100%; box-sizing: border-box; height: 52px; border: 1.5px solid #d6d0c0; border-radius: 14px; padding: 0 14px; font-size: 16px; background: #ffffff; color: #1b1b18; outline: none;">
+      </div>
+
+      <div onClick="{{ toggleAgree }}" style="display: flex; gap: 10px; align-items: flex-start; padding: 16px; background: #f6f3e8; border-radius: 14px; margin-bottom: 22px; cursor: pointer;">
+        <div style="width: 24px; height: 24px; flex: 0 0 auto; border-radius: 7px; border: 1.5px solid #2f6b33; background: {{ boxBg }}; display: flex; align-items: center; justify-content: center; color: #ffffff; font-size: 14px; font-weight: 700;">{{ check }}</div>
+        <div style="font-size: 13.5px; line-height: 1.65; color: #55503f;">작성한 4행시의 매장 전시·SNS 게시와, 당첨 안내 목적의 연락처 수집에 동의합니다. 연락처는 3개월 후 폐기합니다.</div>
+      </div>
+
+      <button onClick="{{ submit }}" style="width: 100%; height: 58px; border: none; border-radius: 16px; background: {{ btnBg }}; color: #ffffff; font-size: 17px; font-weight: 700; cursor: pointer;">응모하기</button>
+      <div style="margin-top: 14px; font-size: 13px; color: #a8a394; text-align: center;">테이블당 1회 · 추첨은 4주차 금요일</div>
+    </div>
+  </div>
+  </sc-if>
+
+  <sc-if value="{{ done }}" hint-placeholder-val="{{ false }}">
+  <div style="min-height: 100vh; box-sizing: border-box; background: #2f6b33; padding: 44px 28px 40px; display: flex; flex-direction: column; align-items: center; text-align: center;">
+    <image-slot id="char-poem-done" style="width: 152px; height: 152px; margin-bottom: 16px;" shape="rect" fit="contain" placeholder="토리 캐릭터 (건배 포즈)"></image-slot>
+    <div style="font-family: 'Jua', sans-serif; font-size: 30px; color: #f4d93f; margin-bottom: 8px;">응모 완료!</div>
+    <div style="font-size: 15px; color: #dbe6d6; line-height: 1.75; margin-bottom: 24px;">이 화면을 직원에게 보여주시면<br>숙취해소제를 드립니다.</div>
+    <div style="width: 100%; background: #fffcf3; border-radius: 20px; padding: 24px 20px; margin-bottom: 20px; text-align: left;">
+      <div style="font-family: 'Gaegu', cursive; font-size: 20px; line-height: 1.7; color: #2a2a20; white-space: pre-line;">{{ preview }}</div>
+      <div style="border-top: 1px solid #eae5d7; margin-top: 16px; padding-top: 12px; display: flex; justify-content: space-between; font-size: 13px; color: #7a7566;">
+        <span>응모번호</span>
+        <span style="font-family: 'Jua', sans-serif; font-size: 17px; color: #2f6b33;">{{ ticket }}</span>
+      </div>
+    </div>
+    <div style="font-size: 13.5px; color: #c6d6c1; line-height: 1.8;">{{ bonusText }}</div>
+    <button onClick="{{ reset }}" style="margin-top: 32px; width: 100%; height: 52px; border: 1.5px solid #6f9471; border-radius: 16px; background: transparent; color: #dbe6d6; font-size: 15px; cursor: pointer;">처음으로</button>
+  </div>
+  </sc-if>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:420,&quot;height&quot;:860}}">
+class Component extends DCLogic {
+  state = { lines: ["", "", "", ""], name: "", phone: "", agree: false, sent: false, ticket: "", seq: 0, exampleOpen: false };
+  KEY = "dongjak-acrostic-v1";
+
+  componentDidMount() {
+    try {
+      const raw = window.localStorage.getItem(this.KEY);
+      if (raw) this.setState({ seq: (JSON.parse(raw) || []).length });
+    } catch (e) {}
+  }
+
+  save(entry) {
+    try {
+      const raw = window.localStorage.getItem(this.KEY);
+      const list = raw ? JSON.parse(raw) : [];
+      list.unshift(entry);
+      window.localStorage.setItem(this.KEY, JSON.stringify(list.slice(0, 300)));
+    } catch (e) {}
+  }
+
+  renderVals() {
+    const s = this.state;
+    const filled = s.lines.slice(0, 3).filter(l => l.trim().length > 0).length === 3;
+    const ok = filled && s.agree;
+    const setLine = (i) => (e) => {
+      const next = s.lines.slice();
+      next[i] = e.target.value;
+      this.setState({ lines: next });
+    };
+    const preview = ["동", "작", "구", "래"]
+      .map((c, i) => (s.lines[i] || "").trim() ? c + " " + s.lines[i].trim() : null)
+      .filter(Boolean)
+      .join("\n");
+
+    return {
+      formOpen: !s.sent,
+      done: s.sent,
+      line1: s.lines[0], line2: s.lines[1], line3: s.lines[2], line4: s.lines[3],
+      onLine1: setLine(0), onLine2: setLine(1), onLine3: setLine(2), onLine4: setLine(3),
+      name: s.name,
+      phone: s.phone,
+      check: s.agree ? "✓" : "",
+      boxBg: s.agree ? "#2f6b33" : "#ffffff",
+      btnBg: ok ? "#2f6b33" : "#b9c4b4",
+      ticket: s.ticket,
+      preview: preview,
+      bonusText: (s.lines[3] || "").trim()
+        ? "당첨은 4주차 금요일 개별연락, 인스타그램을 통해 안내드릴 예정입니다."
+        : "당첨 발표는 4주차 금요일,\n개별 연락과 인스타그램으로 안내드립니다.",
+      exampleOpen: s.exampleOpen,
+      exampleArrow: s.exampleOpen ? "닫기" : "펼치기",
+      toggleExample: () => this.setState({ exampleOpen: !s.exampleOpen }),
+      onName: (e) => this.setState({ name: e.target.value }),
+      onPhone: (e) => this.setState({ phone: e.target.value }),
+      toggleAgree: () => this.setState({ agree: !s.agree }),
+      submit: () => {
+        if (!ok) return;
+        const seq = s.seq + 1;
+        const ticket = "No." + String(seq + 11).padStart(4, "0");
+        this.save({ kind: (s.lines[3] || "").trim() ? "4행시" : "3행시", ticket: ticket, body: preview, name: s.name.trim() || "익명", phone: s.phone.trim(), at: new Date().toISOString() });
+        this.setState({ sent: true, ticket: ticket, seq: seq });
+      },
+      reset: () => this.setState({ sent: false, lines: ["", "", "", ""], name: "", phone: "", agree: false })
+    };
+  }
+}
+</script>
+</body>
+</html>
